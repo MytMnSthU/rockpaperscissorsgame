@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+    <link href="./css/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+
+
+    <div class="container">
+        <h2>Rock Paper Scissors</h2>
+
+        <div class="game">
+
+            <!-- Game Header -->
+            <header id="game-header" class="container">
+
+                <div id="player-detail" class="detail">
+                    <h4>player</h4>
+                    <div class="progress">
+                        <div id="player-live" class="progress-bar"></div>
+                    </div>
+                </div>
+
+                <div id="computer-detail" class="detail">
+                    <h4>computer</h4>
+                    <div class="progress">
+                        <div id="computer-live" class="progress-bar"></div>
+                    </div>
+                </div>
+
+            </header>
+            <!-- Game Header -->
+
+            <!-- Game Body -->
+            <section id="game-body" class="container">
+
+                <figure class="img-group">
+                    <img id="player-img" class="img" src="./img/rock.png" alt="rock" />
+                    <img id="computer-img" class="img" src="./img/rock.png" alt="rock" />
+                </figure>
+
+                <!-- <h4>Choose one thing below :</h4> -->
+
+                <div class="btn-group">
+                    <button id="paper" class="btn"><img src="./img/paper.png" alt="paper"></button>
+                    <button id="rock" class="btn"><img src="./img/rock.png" alt="rock"></button>
+                    <button id="scissors" class="btn"><img src="./img/scissors.png"
+                             alt="scissors"></button>
+                </div>
+
+                <button id="btn-start" class="btn">Start</button>
+
+            </section>
+            <!-- Game Body -->
+
+
+        </div>
+
+    </div>
+
+    <script src="./js/app.js" type="text/javascript"></script>
+</body>
+
+</html>
