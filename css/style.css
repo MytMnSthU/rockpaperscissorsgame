@@ -59,8 +59,6 @@ img {
 	padding: 0.5em 0;
 }
 
-.game {
-}
 
 #game-header,
 .img-group,
@@ -108,10 +106,6 @@ img {
 	padding: 2em;
 }
 
-.img-group .img {
-	/* transition: transform ease 0.3s; */
-	/* background-color: blue; */
-}
 
 .img-group #player-img {
 	transform: rotateY(180deg);
