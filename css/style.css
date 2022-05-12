@@ -7,7 +7,7 @@
 body {
 	font-family: hack, sans-serif;
 	min-height: 100vh;
-	background-color: #205375;
+	background-color: #112b3c;
 	font-size: 1rem;
 }
 
@@ -55,8 +55,13 @@ img {
 }
 
 .container h2 {
+	background-color: #205375;
 	color: #fff;
 	padding: 0.5em 0;
+}
+
+.game {
+	display: grid;
 }
 
 #game-header,
@@ -68,6 +73,7 @@ img {
 }
 
 #game-header {
+	background-color: #205375;
 	color: #fff;
 	padding-bottom: 1.5em;
 }
@@ -101,9 +107,18 @@ img {
 	/* background-color: #ffd000; */
 }
 
+#game-body {
+	background-color: #112b3c;
+}
+
 .img-group {
 	background-color: #112b3c;
-	padding: 2em;
+	/* padding: 2em; */
+}
+
+.img-group .img {
+	/* clip-path: polygon(); */
+	/* background-color: red; */
 }
 
 .img-group #player-img {
@@ -170,7 +185,7 @@ img {
 	background-color: #f66b0e;
 	color: #fff;
 
-	margin-top: 2em;
+	margin-top: 0.5em;
 	padding: 1em 2em;
 }
 
@@ -180,6 +195,6 @@ img {
 	cursor: not-allowed;
 }
 
-.btn-again{
+.btn-again {
 	background-color: #fff;
 }

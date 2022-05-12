@@ -26,22 +26,27 @@ window.addEventListener('load', () => {
 
 	startbtn.addEventListener('click', () => {
 		getCchoice();
+
+		//  Every Start btn click should start with rock
 		pimg.src = `./img/rock.png`;
 		cimg.src = `./img/rock.png`;
-		console.log(pchoice, cchoice);
+
 		doPanimation();
 		doCanimation();
 
 		setTimeout(() => {
 			pimg.src = `./img/${pchoice}.png`;
 			cimg.src = `./img/${cchoice}.png`;
+
 			winlose();
-			console.log('plive :', plive, 'clive :', clive);
+
 			plivebar.style.width = `${plive}%`;
 			clivebar.style.width = `${clive}%`;
-			liveColor();
-			gameStatus();
-		}, 2100);
+
+			liveColor(); // Change color of live when livebar is low
+		}, 1500);
+
+		setTimeout(gameStatus,2300)
 	});
 
 	choicebtns.forEach((c) => {
@@ -76,6 +81,7 @@ window.addEventListener('load', () => {
 	}
 
 	function doPanimation() {
+
 		pimg.animate(
 			[
 				{ transform: 'translateX(-100%) rotateY(180deg) rotateZ(0deg)' },
@@ -83,24 +89,28 @@ window.addEventListener('load', () => {
 				{ transform: 'translateX(-100%) rotateY(180deg) rotateZ(0deg)' },
 			],
 			{
-				duration: 700,
+				duration: 500,
 				direction: 'normal',
 				easing: 'ease-out',
 				iterations: 3,
 			},
 		);
+
 	}
 
 	function doCanimation() {
+
 		cimg.animate([{ transform: 'rotateZ(0deg)' }, { transform: 'rotateZ(30deg)' }, { transform: 'rotateZ(0deg)' }], {
-			duration: 700,
+			duration: 500,
 			direction: 'normal',
 			easing: 'ease-out',
 			iterations: 3,
 		});
+
 	}
 
 	function winlose() {
+
 		if (plive !== 0 || clive !== 0) {
 			if (pchoice === cchoice) console.log('Draw');
 			else if (pchoice === 'paper' && cchoice === 'rock') clive -= 25;
@@ -108,13 +118,13 @@ window.addEventListener('load', () => {
 			else if (pchoice === 'rock' && cchoice === 'paper') plive -= 25;
 			else if (pchoice === 'rock' && cchoice === 'scissors') clive -= 25;
 			else if (pchoice === 'scissors' && cchoice === 'paper') clive -= 25;
-			else if (pchoice === 'scissors' && cchoice === 'rock') plive -= 25;
-		} else {
-			console.log('game finished');
-		}
+			else plive -= 25;
+		} 
+
 	}
 
 	function liveColor() {
+
 		if (plive == 100) {
 			pliveborder.style.borderColor = '#1cef00';
 			plivebar.style.backgroundColor = '#1cef00';
@@ -125,6 +135,7 @@ window.addEventListener('load', () => {
 			pliveborder.style.borderColor = '#ff0000';
 			plivebar.style.backgroundColor = '#ff0000';
 		}
+
 		if (clive == 100) {
 			cliveborder.style.borderColor = '#1cef00';
 			clivebar.style.backgroundColor = '#1cef00';
@@ -135,9 +146,11 @@ window.addEventListener('load', () => {
 			cliveborder.style.borderColor = '#ff0000';
 			clivebar.style.backgroundColor = '#ff0000';
 		}
+
 	}
 
 	function gameStatus() {
+
 		if (plive === 0) {
 			gamebody.innerHTML = `
                 <h2>Game Over</h2>
@@ -150,5 +163,6 @@ window.addEventListener('load', () => {
                 <button class="btn btn-again">Play Again?</button>
             `;
 		}
+
 	}
 });
